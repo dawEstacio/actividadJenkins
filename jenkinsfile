@@ -2,14 +2,14 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Install') {
             steps {
-                echo 'Hello World from Git'
+                sh 'npm install' 
             }
         }
-        stage('Goodbye') {
+        stage('Lint') {
             steps {
-                echo 'Goodbye World from Git'
+                sh 'npm run lint'
             }
         }
     }
