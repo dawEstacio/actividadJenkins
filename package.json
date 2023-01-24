@@ -1,0 +1,28 @@
+{
+  "name": "actividadjenkins",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dawEstacio/actividadJenkins.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dawEstacio/actividadJenkins/issues"
+  },
+  "homepage": "https://github.com/dawEstacio/actividadJenkins#readme",
+  "dependencies": {
+    "eslint-config-standard": "^17.0.0",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.32.0"
+  }
+}
