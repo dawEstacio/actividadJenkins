@@ -1,10 +1,13 @@
 pipeline {
     agent any
-    
+    tools {nodejs "miNodejs"}
+    parameters {
+        string(name: 'persona_a_saludar', description: 'persona que quiero saludar')
+    }
     stages {
-        stage('Install') {
+        stage('Execution') {
             steps {
-                sh 'npm --version'
+                sh 'node index.js "${persona_a_saludar}"'
             }
         }
        
