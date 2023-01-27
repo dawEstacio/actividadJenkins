@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Execution') {
             steps {
-                sh 'node index.js "${persona_a_saludar}"'
+                sh 'node src/index.js "${persona_a_saludar}"'
             }
         }
        
