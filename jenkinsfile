@@ -9,9 +9,10 @@ pipeline {
 
     stages {
         stage('Execution') {
+            steps {
             
-            echo "hola"
-           
+                echo "hola"
+            }
 
         }
        
