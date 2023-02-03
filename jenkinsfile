@@ -14,7 +14,7 @@ pipeline {
                withCredentials([  string(credentialsId: 'token_telegram', variable: 'token_telegram'),
                                     string(credentialsId: 'chatId', variable: 'chatId')])
                 { 
-                    sh 'node src/telegramBot.js "${token_telegram}" "${chatId}" "Pepe"'
+                    sh 'npm install && node src/telegramBot.js "${token_telegram}" "${chatId}" "Pepe"'
                 }
                 
             }
