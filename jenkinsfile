@@ -1,14 +1,25 @@
 pipeline {
     agent any
     tools {nodejs "miNodejs"}
-    parameters {
-        string(name: 'persona_a_saludar', description: 'persona que quiero saludar')
+    environment {
+        bot_token = credentials('token_telegram')
+        chat_token = credentials('chatId')
     }
     stages {
         stage('Execution') {
+            
+            
+            
             steps {
-                sh 'node src/index.js "${persona_a_saludar}"'
-            }
+
+                 withCredentials([  string(credentialsId: 'token_telegram', variable: 'bot_token'),
+                                    string(credentialsId: 'chat_token', variable: 'chat_token')])
+                { 
+                    node src/telegramBot.js "${bot_token}" "${chat_token}" "Pepe"'
+                }
+                
+             }  
+
         }
        
     }
