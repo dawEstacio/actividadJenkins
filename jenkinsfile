@@ -11,7 +11,12 @@ pipeline {
         stage('Execution') {
             steps {
             
-                echo "hola"
+               withCredentials([  string(credentialsId: 'token_telegram', variable: 'bot_token'),
+                                    string(credentialsId: 'chat_token', variable: 'chat_token')])
+                { 
+                    node src/telegramBot.js "${bot_token}" "${chat_token}" "Pepe"'
+                }
+                
             }
 
         }
